@@ -18,3 +18,12 @@ CREATE TABLE facilitador (
 	cidade varchar(50) NULL,
 	PRIMARY KEY (facilitador_id)
 );
+
+--Tabela que lista as turmas da Resilia
+CREATE TABLE turma (
+	turma_id SERIAL NOT NULL,
+	curso_id int NOT NULL,
+  	nomenclatura varchar(20) NOT NULL,
+	mascote varchar(30),
+	PRIMARY KEY (turma_id),
+	FOREIGN KEY (curso_id) REFERENCES curso (curso_id)
