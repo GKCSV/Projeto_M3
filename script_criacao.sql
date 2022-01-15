@@ -47,3 +47,14 @@ CREATE TABLE aluno (
 	endereco varchar(200),
   	PRIMARY KEY (aluno_id)
 );
+
+--Tabela que efetiva a matrícula de um aluno em uma determina turma
+CREATE TABLE matricula (
+	matricula_id SERIAL NOT NULL,
+	turma_id INT NOT NUll,
+	aluno_id INT NOT NULL,
+	status VARCHAR(30),
+  	PRIMARY KEY (matricula_id),
+	FOREIGN KEY (turma_id) REFERENCES turma (turma_id),
+	FOREIGN KEY (aluno_id) REFERENCES aluno (aluno_id)
+);
