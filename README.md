@@ -6,10 +6,15 @@ Facilitadores: Marisa Silva, Tais Cunha.
 
 Integrantes:
 1- Gabriel Kanarski
+
 2- Gabriela Antunes
+
 3- Liora Dopacio
+
 4- Odilon Cavalcante
+
 5- Ricardo Galvão
+
 
 
 
