@@ -42,7 +42,7 @@ Gabriel, Gabriela, Liora, Odilon
 Execução:
 .
 .
-**1 - Revisão das alterações da modelagem;
+>**1 - Revisão das alterações da modelagem;
 .
 .
 Remodelagem:
@@ -84,7 +84,7 @@ FACILITADORES:
 .
 .
 .
-**2 - Alterações no .sql:
+>**2 - Alterações no .sql:
 .
 
 Mudanças em algumas chaves primárias;
@@ -102,7 +102,7 @@ UPDATE
 1 - Alterar cidade atual do facilitador 'TAIS CUNHA'
 .
 .
-**3 - GitHub:
+>**3 - GitHub:
 
 1 - Criação do repositório Projeto_M3 no GitHub;
 2 - Inserção de informações no README;
@@ -114,11 +114,11 @@ UPDATE
 .
 .
 .
-**4 - Re-divisão de tabelas para população de dados;
+>**4 - Re-divisão de tabelas para população de dados;
 .
 
 
-**5 - População das tabelas;
+>**5 - População das tabelas;
 .
 .
 .
