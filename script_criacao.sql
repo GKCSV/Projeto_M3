@@ -8,10 +8,10 @@ CREATE TABLE curso (
 	PRIMARY KEY (curso_id) 
 );
 
---Tabela que lista os departamentos da Resilia
+--Tabela que lista os departamentos do curso
 CREATE TABLE departamento (
 	departamento_id SERIAL NOT NULL,
-	descricao VARCHAR (255),
+	nome VARCHAR (40),
 	PRIMARY KEY (departamento_id)
 );
 
@@ -69,11 +69,10 @@ CREATE TABLE matricula (
 
 --Tabela que lista os módulos de um respectivo curso
 CREATE TABLE modulo ( 
-	modulo_id int not null, 
+	modulo_id SERIAL not null, 
 	curso_id int not null, 
 	nome varchar(60), 
 	descricao varchar(255), 
 	PRIMARY KEY (modulo_id),
 	FOREIGN KEY (curso_id) REFERENCES curso (curso_id)
 ); 
-
