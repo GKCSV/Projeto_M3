@@ -41,7 +41,7 @@ CREATE TABLE facilitador_turma (
 CREATE TABLE aluno (
 	aluno_id SERIAL NOT NULL,
 	nome varchar(80),
-	data_nasc timestamp,
+	data_nasc date,
 	telefone varchar(20),
 	email varchar(200),
 	endereco varchar(200),
