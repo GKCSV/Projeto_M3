@@ -54,26 +54,33 @@ INSERT INTO aluno (nome,data_nasc,telefone,email,endereco) VALUES
   ('Hiram Campos','02/06/2002','+55(56)96822-1582','nibh.sit@yahoo.com','Rua Rio de Janeiro, 424, Alto da Boa Vista, Rio de Janeiro'),
   ('Lee Brandao','15/11/1993','+55(34)98155-3238','libero.proin@hotmail.com','Rua Darci Alves de Oliveira, 195, Palmeiras do Resplendor, Joinville');
 
-  INSERT INTO facilitador (nome,disciplina,telefone,email,cidade) VALUES
-  ('Bruno Cani','Tech','+55(36)93823-6425','mi@gmail.com','Rio de Janeiro'),
-  ('Verônica Borges','Soft','+55(96)95162-6916','diam.pellentesque.habitant@hotmail.com','Petrolina'),
-  ('Felipe do Espírito Santo','Soft','+55(25)94844-4575','feugiat.nec@outlook.com','Paço do Lumiar'),
-  ('Fernanda Pedreira','Soft','+55(85)98538-7251','pellentesque@gmail.com','Piracicaba'),
-  ('Laís Brandão','Soft','+55(17)93235-8856','consectetuer@outlook.com','Lauro de Freitas'),
-  ('Cinthia Martins','Tech','+55(46)92888-9654','mauris@gmail.com','Patos'),
-  ('Gabriel Izoton','Tech','+55(67)98466-3838','senectus.et.netus@hotmail.com','Jaboatão dos Guararapes'),
-  ('Marina Costa','Tech','+55(25)99333-5844','phasellus.libero.mauris@gmail.com','Feira de Santana'),
-  ('Mariana Anjos','Soft','+55(59)96372-9588','sagittis@hotmail.com','São José dos Pinhais'),
-  ('Hannah Rabe','Soft','+55(43)93962-8136','varius.et@outlook.com','Salvador'),
-  ('Thomaz Albuquerque','Soft','+55(24)94818-3519','donec.tincidunt@outlook.com','Juazeiro'),
-  ('Ana Beatriz Assis','Soft','+55(49)99635-5786','mauris.a@yahoo.com','Ilhéus'),
-  ('João Pedro de Lacerda','Tech','+55(24)96422-8888','ullamcorper.nisl@outlook.com','Rio Verde'),
-  ('Tais Cunha','Soft','+55(16)92697-8269','nunc.laoreet@yahoo.com','Crato'),
-  ('Danielle Fonseca','Soft','+55(46)92472-8583','porttitor.tellus@hotmail.com','Santa Rita'),
-  ('Ana Paula Santos','Tech','+55(28)98582-4562','mattis.cras@hotmail.com','Rio Verde'),
-  ('Marisa Silva','Tech','+55(46)92472-8583','porttitor.tellus@hotmail.com','Santa Rita'),
-  ('Guilherme Ribeiro','Tech','+55(28)98582-4562','mattis.cras@hotmail.com','Rio Verde'),
-  ('Eloá Ferraz','Soft','+55(46)92472-8583','porttitor.tellus@hotmail.com','Santa Rita');
+  INSERT INTO departamento (nome) VALUES
+  ('Facilitação'),
+  ('Monitoria'),
+  ('Empregabilidade'),
+  ('Comunidade'),
+  ('Marketing');
+
+  INSERT INTO funcionario (nome,telefone,email,cidade, departamento_id) VALUES
+  ('Bruno Cani','+55(36)93823-6425','mi@gmail.com','Rio de Janeiro', 1),
+  ('Verônica Borges','+55(96)95162-6916','diam.pellentesque.habitant@hotmail.com','Petrolina', 1),
+  ('Felipe do Espírito Santo','+55(25)94844-4575','feugiat.nec@outlook.com','Paço do Lumiar', 1),
+  ('Fernanda Pedreira','+55(85)98538-7251','pellentesque@gmail.com','Piracicaba', 1),
+  ('Laís Brandão','+55(17)93235-8856','consectetuer@outlook.com','Lauro de Freitas', 1),
+  ('Cinthia Martins','+55(46)92888-9654','mauris@gmail.com','Patos', 1),
+  ('Gabriel Izoton','+55(67)98466-3838','senectus.et.netus@hotmail.com','Jaboatão dos Guararapes', 1),
+  ('Marina Costa','+55(25)99333-5844','phasellus.libero.mauris@gmail.com','Feira de Santana', 1),
+  ('Mariana Anjos','+55(59)96372-9588','sagittis@hotmail.com','São José dos Pinhais', 1),
+  ('Hannah Rabe','+55(43)93962-8136','varius.et@outlook.com','Salvador', 3),
+  ('Thomaz Albuquerque','+55(24)94818-3519','donec.tincidunt@outlook.com','Juazeiro', 4),
+  ('Ana Beatriz Assis','+55(49)99635-5786','mauris.a@yahoo.com','Ilhéus', 5),
+  ('João Pedro de Lacerda','+55(24)96422-8888','ullamcorper.nisl@outlook.com','Rio Verde', 1),
+  ('Tais Cunha','+55(16)92697-8269','nunc.laoreet@yahoo.com','Crato', 1),
+  ('Danielle Fonseca','+55(46)92472-8583','porttitor.tellus@hotmail.com','Santa Rita', 1),
+  ('Ana Paula Santos','+55(28)98582-4562','mattis.cras@hotmail.com','Rio Verde', 1),
+  ('Marisa Silva','+55(46)92472-8583','porttitor.tellus@hotmail.com','Santa Rita', 1),
+  ('Guilherme Ribeiro','+55(28)98582-4562','mattis.cras@hotmail.com','Rio Verde', 2),
+  ('Eloá Ferraz','+55(46)92472-8583','porttitor.tellus@hotmail.com','Santa Rita', 5);
   
   INSERT INTO turma (curso_id,nomenclatura,mascote) VALUES
   (1,'T01','Medalha'),
@@ -90,7 +97,7 @@ INSERT INTO aluno (nome,data_nasc,telefone,email,endereco) VALUES
   (2,'T12','Mamute'),
   (1,'T13','Abelha');
   
-  INSERT INTO facilitador_turma (turma_id,facilitador_id) VALUES
+  INSERT INTO facilitador_turma (turma_id,funcionario_id) VALUES
   (1,1),
   (1,2),
   (2,3),
@@ -172,3 +179,17 @@ INSERT INTO aluno (nome,data_nasc,telefone,email,endereco) VALUES
   (12,49,'Cursando'),
   (12,50,'Cursando'),
   (12,26,'Cursando');
+  
+  INSERT INTO modulo (curso_id,nome, descricao) VALUES
+  (1, 'Módulo 1', 'Front End e hábitos de sucesso'),
+  (1, 'Módulo 2', 'Orientação a objetos aplicada a HTTP e Inteligência emocional'),
+  (1, 'Módulo 3', 'Armazenamento de dados e metodologias ágeis'),
+  (1, 'Módulo 4', 'Bibliotecas, Back End e postura profissional'),
+  (1, 'Módulo 5', 'Frameworks, Front End e processo seletivo'),
+  (2, 'Módulo 1', 'Python e mindset de crescimento'),
+  (2, 'Módulo 2', 'Estrutura de dados e inteligência emocional'),
+  (2, 'Módulo 3', 'SQL e metodologias ágeis'),
+  (2, 'Módulo 4', 'Pandas e posturas profissionais'),
+  (2, 'Módulo 5', 'Mineração de dados e capacidade investigativa'),
+  (2, 'Módulo 6', 'Tableau e empregabilidade');
+    
