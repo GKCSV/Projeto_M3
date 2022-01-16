@@ -8,15 +8,34 @@ CREATE TABLE curso (
 	PRIMARY KEY (curso_id) 
 );
 
+--Tabela que lista os departamentos da Resilia
+CREATE TABLE departamento (
+	departamento_id SERIAL NOT NULL,
+	descricao VARCHAR (255),
+	PRIMARY KEY (departamento_id)
+);
+
+--Tabela que lista os alunos da Resilia
+CREATE TABLE aluno (
+	aluno_id SERIAL NOT NULL,
+	nome varchar(80),
+	data_nasc date,
+	telefone varchar(20),
+	email varchar(200),
+	endereco varchar(200),
+  	PRIMARY KEY (aluno_id)
+);
+
 --Tabela que lista os facilitadores da Resilia
-CREATE TABLE facilitador (
-	facilitador_id SERIAL NOT NULL,
+CREATE TABLE funcionario (
+	funcionario_id SERIAL NOT NULL,
   	nome varchar(60) NULL,
-	disciplina varchar(60) NULL,
 	telefone varchar(20) NULL,
 	email varchar(200) NULL,
 	cidade varchar(50) NULL,
-	PRIMARY KEY (facilitador_id)
+	departamento_id INT NOT NULL,
+	FOREIGN KEY (departamento_id) REFERENCES departamento (departamento_id),
+	PRIMARY KEY (funcionario_id)
 );
 
 --Tabela que lista as turmas da Resilia
@@ -32,20 +51,9 @@ CREATE TABLE turma (
 --Tabela que relaciona as turmas aos seus respectios facilitadores e vice-versa
 CREATE TABLE facilitador_turma (
 	turma_id INT NOT NULL,
-	facilitador_id INT NOT NULL,
-	FOREIGN KEY (facilitador_id) REFERENCES facilitador (facilitador_id),
+	funcionario_id INT NOT NULL,
+	FOREIGN KEY (funcionario_id) REFERENCES funcionario (funcionario_id),
 	FOREIGN KEY (turma_id) REFERENCES turma (turma_id)
-);
-
---Tabela que lista os alunos da Resilia
-CREATE TABLE aluno (
-	aluno_id SERIAL NOT NULL,
-	nome varchar(80),
-	data_nasc date,
-	telefone varchar(20),
-	email varchar(200),
-	endereco varchar(200),
-  	PRIMARY KEY (aluno_id)
 );
 
 --Tabela que efetiva a matrícula de um aluno em uma determina turma
@@ -58,3 +66,14 @@ CREATE TABLE matricula (
 	FOREIGN KEY (turma_id) REFERENCES turma (turma_id),
 	FOREIGN KEY (aluno_id) REFERENCES aluno (aluno_id)
 );
+
+--Tabela que lista os módulos de um respectivo curso
+CREATE TABLE modulo ( 
+	modulo_id int not null, 
+	curso_id int not null, 
+	nome varchar(60), 
+	descricao varchar(255), 
+	PRIMARY KEY (modulo_id),
+	FOREIGN KEY (curso_id) REFERENCES curso (curso_id)
+); 
+
