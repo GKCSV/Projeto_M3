@@ -34,4 +34,4 @@ ELSE 'Pessoas menores de 21 anos'
 END AS faixa_idade
 FROM aluno 
 GROUP BY faixa_idade
-ORDER BY COUNT(aluno_id) DESC LIMIT 1
+ORDER BY COUNT(aluno_id) DESC LIMIT 1;
