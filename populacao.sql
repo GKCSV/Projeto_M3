@@ -81,6 +81,10 @@ INSERT INTO aluno (nome,data_nasc,telefone,email,endereco) VALUES
   ('Marisa Silva','+55(46)92472-8583','porttitor.tellus@hotmail.com','Santa Rita', 1),
   ('Guilherme Ribeiro','+55(28)98582-4562','mattis.cras@hotmail.com','Rio Verde', 2),
   ('Eloá Ferraz','+55(46)92472-8583','porttitor.tellus@hotmail.com','Santa Rita', 5);
+  ('Suellen Venâncio','+55(11)93855-6335','su@gmail.com','Osasco', 1),
+  ('Artur Moreira','+55(45)93665-6312','artut_m@gmail.com','Foz do Iguaçu', 1),
+  ('Isac Sabino','+55(21)99855-5535','isac@gmail.com','Rio de Janeiro', 1),
+  ('Thomas Silva','+55(11)93872-2535','thomas_s@gmail.com','Campinas', 1);
   
   INSERT INTO turma (curso_id,nomenclatura,mascote) VALUES
   (1,'T01','Medalha'),
